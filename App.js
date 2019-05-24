@@ -1,15 +1,14 @@
-import  { Navigation } from 'react-native-navigation'
-import { Provider } from 'react-redux'
-import configureStore from './src/store/configureStore'
+import { Navigation } from "react-native-navigation";
+import { Provider } from "react-redux";
+import configureStore from "./src/store/configureStore";
 
+import AuthScreen from "./src/screens/Auth/Auth";
+import InputKaryawanScreen from "./src/screens/InputKaryawan/InputKaryawan";
+import ListEmployeeScreen from "./src/screens/ListEmployee/ListEmployee";
+import EmployeeDetailScreen from "./src/screens/EmployeeDetail/EmployeeDetail";
+import SideDrawerScreen from "./src/screens/SideDrawer/SideDrawer";
 
-import AuthScreen from './src/screens/Auth/Auth'
-import SharePlaceScreen from './src/screens/SharePlace/SharePlace'
-import FindPlaceScreen from './src/screens/FindPlace/FindPlace'
-import PlaceDetailScreen from './src/screens/PlaceDetail/PlaceDetail'
-import SideDrawerScreen from './src/screens/SideDrawer/SideDrawer'
-
-const store = configureStore()
+const store = configureStore();
 
 // Register Screens
 Navigation.registerComponent(
@@ -17,41 +16,40 @@ Navigation.registerComponent(
   () => AuthScreen,
   store,
   Provider
-)
+);
 
 Navigation.registerComponent(
-  "jc8reactnative.SharePlaceScreen",
-  () => SharePlaceScreen,
+  "jc8reactnative.InputKaryawanScreen",
+  () => InputKaryawanScreen,
   store,
   Provider
-)
+);
 
 Navigation.registerComponent(
-  "jc8reactnative.FindPlaceScreen",
-  () => FindPlaceScreen,
+  "jc8reactnative.ListEmployeeScreen",
+  () => ListEmployeeScreen,
   store,
   Provider
-)
+);
 
 Navigation.registerComponent(
-  'jc8reactnative.PlaceDetailScreen',
-  () => PlaceDetailScreen,
+  "jc8reactnative.EmployeeDetailScreen",
+  () => EmployeeDetailScreen,
   store,
   Provider
-)
+);
 
 Navigation.registerComponent(
-  'jc8reactnative.SideDrawerScreen',
+  "jc8reactnative.SideDrawerScreen",
   () => SideDrawerScreen,
   store,
   Provider
-)
-
+);
 
 // Start Screens
 Navigation.startSingleScreenApp({
   screen: {
-    screen: 'jc8reactnative.AuthScreen',
-    title: 'Login'
+    screen: "jc8reactnative.AuthScreen",
+    title: "Login"
   }
-})
+});
